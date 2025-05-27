@@ -166,17 +166,23 @@ python3 main.py
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+|   Smiley      |  Super         | Main Object         |
+|Happy|Sub|Smiley, Blinkable|
+|Sad|Sub|Smiley
+|Blinkable|Super|Main Object|
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
 > Your answer here
->
+>        self.draw_mouth()
+        self.draw_eyes()
+> Are classed as abstract in coding as you don't need to know how the pixels indices will be drawn out, letting anyone using happy.py able to use it without understanding the pixels.
+> Basically abstraction is that for something to work you don't need to understand the whole concept, just what require you to use it effectively, like using a keyboard, you can understand what the keys mean when you press them but you aren't required to know how the computer recognising the button imprint and executes the command in real time.
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
->
+> Inheritance, is derives the attributes and methods from another class, example would be happy.py using the class smiley.py, happy get's everything that's defined in smiley.
 
 ### 2.5. Compare and contrast classes
 
@@ -184,28 +190,31 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
    > Your answer here
-   >
+   > Happy inherits from both smiley and blinky whereas Sad only inherits from smiley. The main class object for both though is smiley.
+   
 2. What are the key similarities?
    > Your answer here
-   >
+   > Coding wise is pretty much similar for the first half of both, using the exact same blocks and variables.
+   
 3. What difference stands out the most to you and why?
    > Your answer here
-   >
+   > The 2nd half of the coding for Happy incorporates the inheritance from blinky, where is uses the class to incorporate a new coding structure.
+   
 4. How does this difference affect the functionality of these classes
    > Your answer here
-   >
+   > Sad will have a motionless expression where as with smiley and blinky in Happy, Happy will now have the new functionality of creating a blinking type motion when executed.
 
 ### 2.6. Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
    > Your answer here
-   >
+   > Smiley is the only one to use SenseHat
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
-   >
+   > Smiley
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
-   >
+   > In the Smiley class, the SenseHat is kept hidden using encapsulation. This means it's stored inside the class as self.sense_hat and not used directly by other parts of the code. Instead, methods like show() control how it works. This keeps things tidy and safer, because other code can’t accidentally mess with the SenseHat directly. It also makes the class easier to use and update later without breaking anything
 
 ### 2.7. Sad Smileys Can’t Blink (Or Can They?)
 
@@ -216,22 +225,24 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
->
+> From context, every smiley should be able to blink and has the capability to, inserting the class into sad the same way happy does is very acheivable and will produce similar effects.
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > Your answer here
->
+> The code is only set up in 1 way that blinky activates, there is no variation. Therefore it should blink the same way. However, the method can be coded different in each class depending on how it is formulated, creating different styles of blinking.
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
 > Your answer here
->
+> Means the same class can be used with different methods but have the same name. Essentially in Happy, blinky can be used to close and open its eyes rapidly, whereas in Sad, blinky can be used to open and close more slower. Depending on how the command is set up.
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
 > Your answer here
->
+> Inheritance means that sad or happy can use blinky and/or overide it where applicable as it only provides the base methods and attributes, which can then be updated to what you requires.
+> Polymorphism is important for this as it lets different classes have it's own version of blinky essentially, without overidig the others changes.
+
 1. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
