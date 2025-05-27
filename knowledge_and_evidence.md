@@ -70,9 +70,9 @@ python3 main.py
 
    | Type                    | name       | value          |
    | ----------              | ---------- | -------------- |
-   | built-in primitive type | Dimmed          |  Value             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | built-in primitive type | Dimmed          |  True             |
+   | built-in composite type | self.pixels          | RGB - YELLOW = (255, 255, 0)              |
+   | user-defined type       | Smiley          |  Instance of smiley class             |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
