@@ -2,9 +2,9 @@ import time
 from smiley import Smiley
 from blinkable import Blinkable
 
-class Sad(Smiley, Blinkable):
+class Angry(Smiley, Blinkable):
     def __init__(self):
-        super().__init__(complexion=self.BLUE)
+        super().__init__(complexion=self.RED)
 
         self.draw_mouth()
         self.draw_eyes()
@@ -13,7 +13,7 @@ class Sad(Smiley, Blinkable):
         """
         Draws the mouth feature on a smiley
         """
-        mouth = [49, 54, 42, 43, 44, 45]
+        mouth = [42, 43, 44, 45]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
 
