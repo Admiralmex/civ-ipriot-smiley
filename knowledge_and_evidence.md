@@ -70,7 +70,7 @@ python3 main.py
 
    | Type                    | name       | value          |
    | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
+   | built-in primitive type | Dimmed          |  Value             |
    | built-in composite type | _          |  _             |
    | user-defined type       | _          |  _             |
 
