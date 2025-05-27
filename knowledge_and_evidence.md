@@ -86,51 +86,74 @@ python3 main.py
 
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   |  sequence    | smiley.py         | self.sense_hat = SenseHat()           | 13           |
+   |  selection   | sad.py          | if wide_open:           | 26-30           |
+   |  iteration   | happy.py          |  for pixel in mouth          | 21-22           |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | int                     | True     | mouth = [41, 46, 50, 51, 52, 53]          |
+   | float                   | True     | def blink(self, delay=0.25):          |
+   | str                     | False     | N/A          |
+   | bool                    | True     | self.draw_eyes(wide_open=False)          |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
->
+> smiley.py
+> class Smiley:
+    WHITE = (255, 255, 255)
+    GREEN = (0, 255, 0)
+    RED = (255, 0, 0)
+    YELLOW = (255, 255, 0)
+    BLANK = (0, 0, 0)
+> is defined as a class variable as it shares across all codes (smiley, sad and happy), where as
+>     def __init__(self):
+        # We have encapsulated the SenseHat object
+        self.sense_hat = SenseHat()
+>is classed as an instace variable as it only encapsules the smiley.py file and does not share across instances.
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
    > Your answer here
-   >
+   >class Happy(Smiley, Blinkable):
+    """
+   Provides a Smiley with a happy expression
+    """
+    def __init__(self):
+        super().__init__()
+   > Purpose of this is to create an object from a class, setting up the initial state for use in instanced variables
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    > Your answer here
-   >
+   > Calls upon the contructor/initialiser and runs the code defined in smiley.py.
 
 ### 2.3. Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
 
 > Your answer here
->
+> The code style is similar as it uses Pep8 style, which makes both easier to read across.
 
 2. List three aspects of this convention you see applied in the code.
 
 > Your answer here
->
+> Underlines
+> 4 spacing
+> Class names have Capital letters at the start CamelCase
 
 3. Give two examples of organizational documentation in the code.
 
 > Your answer here
->
+> Comments (        """
+        Set the SenseHat's light intensity to low (True) or high (False)
+        :param dimmed: Dim the display if True, otherwise don't dim
+        """
+> Naming conventions -
+> class Smiley:
 
 ### 2.4. Identifying and understanding classes
 
